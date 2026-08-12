@@ -180,7 +180,6 @@ export function FabricScene({ startAt, onReady, onComplete }: FabricSceneProps) 
       const headline = smoothstep(0.14, 0.62, contentProgress);
       const details = smoothstep(0.52, 0.82, contentProgress);
       const actions = smoothstep(0.76, 1.0, contentProgress);
-      const note = smoothstep(0.84, 1.0, contentProgress);
 
       host.style.setProperty("--loader-release", String(loaderRelease));
       host.style.setProperty("--brand-opacity", String(brand));
@@ -189,7 +188,6 @@ export function FabricScene({ startAt, onReady, onComplete }: FabricSceneProps) 
       host.style.setProperty("--details-opacity", String(details));
       host.style.setProperty("--actions-opacity", String(actions));
       host.style.setProperty("--actions-shift", String((1 - actions) * 0.4));
-      host.style.setProperty("--note-opacity", String(note));
     };
 
     const resizeRenderer = () => {

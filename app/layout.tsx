@@ -40,11 +40,20 @@ export const metadata: Metadata = {
     description: "SPACES Conference - 23 August 2026 - Chanakya BNR Ranchi",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "/spaces-ranchi-preview-v3.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mukesh & Company invites Jharkhand retailers to the SPACES Conference in Ranchi",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "A new chapter unfolds in Jharkhand",
     description: "SPACES Conference - 23 August 2026 - Chanakya BNR Ranchi",
+    images: ["/spaces-ranchi-preview-v3.jpg"],
   },
 };
 

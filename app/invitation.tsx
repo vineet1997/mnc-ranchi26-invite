@@ -74,15 +74,6 @@ export function Invitation() {
     setOpeningPhase("complete");
   }, []);
 
-  const skipOpening = useCallback(() => {
-    openingCommittedRef.current = true;
-    if (releaseTimerRef.current !== null) {
-      window.clearTimeout(releaseTimerRef.current);
-    }
-    setOpeningStart(null);
-    setOpeningPhase("static");
-  }, []);
-
   useEffect(() => {
     loaderStartedAtRef.current = performance.now();
     const fallbackTimer = window.setTimeout(() => handleFabricReady(false), 6500);
@@ -144,12 +135,6 @@ export function Invitation() {
           <p>Preparing your invitation<span aria-hidden="true">...</span></p>
         </div>
 
-        {openingPhase === "loading" || openingPhase === "opening" ? (
-          <button className="opening-skip" type="button" onClick={skipOpening}>
-            Skip intro
-          </button>
-        ) : null}
-
         <div className="hero-nav">
           <MukeshWordmark />
           <span className="partnership-stitch" aria-hidden="true" />
@@ -193,7 +178,6 @@ export function Invitation() {
             Get directions <ArrowUpRight weight="bold" />
           </a>
         </div>
-        <p className="hero-note">Discover. Connect. Grow together.</p>
       </section>
 
       <section className="chapter section-pad reveal-section">
