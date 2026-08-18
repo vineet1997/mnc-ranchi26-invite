@@ -27,10 +27,10 @@ function SpacesMark() {
   );
 }
 
-function MukeshWordmark({ inverse = false }: { inverse?: boolean }) {
+function IndianTradingWordmark({ inverse = false }: { inverse?: boolean }) {
   return (
-    <div className={`mukesh-mark${inverse ? " inverse" : ""}`}>
-      <strong>Mukesh <i>&</i> Company</strong>
+    <div className={`indian-trading-mark${inverse ? " inverse" : ""}`}>
+      <strong>Indian Trading Company</strong>
     </div>
   );
 }
@@ -112,7 +112,7 @@ export function Invitation() {
     const person = name.trim() || "[your name]";
     const shop = store.trim() || "[store name]";
     const place = town.trim() || "[town]";
-    const message = `Namaste, I'm ${person} from ${shop}, ${place}. I would like to confirm our attendance at the SPACES Conference in Ranchi on 23 August 2026. Total guests: ${guests}.`;
+    const message = `Namaste, I'm ${person} from ${shop}, ${place}. I would like to confirm our attendance at the SPACES Conference in Ranchi on 25 August 2026. Total guests: ${guests}.`;
     return `https://wa.me/${event.rsvpNumber}?text=${encodeURIComponent(message)}`;
   }, [guests, name, store, town]);
 
@@ -130,13 +130,13 @@ export function Invitation() {
         ) : null}
 
         <div className="opening-loader" aria-live="polite" aria-label="Preparing your invitation">
-          <div className="opening-loader-mark"><MukeshWordmark /></div>
+          <div className="opening-loader-mark"><IndianTradingWordmark /></div>
           <div className="opening-loader-thread" aria-hidden="true"><span /></div>
           <p>Preparing your invitation<span aria-hidden="true">...</span></p>
         </div>
 
         <div className="hero-nav">
-          <MukeshWordmark />
+          <IndianTradingWordmark />
           <span className="partnership-stitch" aria-hidden="true" />
           <SpacesMark />
         </div>
@@ -160,13 +160,13 @@ export function Invitation() {
           </div>
           <div>
             <span>Time</span>
-            <strong>3:00 PM</strong>
+            <strong>6:00 PM</strong>
             <small>Onwards</small>
           </div>
           <div>
             <span>Venue</span>
-            <strong>Chanakya BNR</strong>
-            <small>Ranchi</small>
+            <strong>{event.venueLabel}</strong>
+            <small>{event.venueDetail}</small>
           </div>
         </div>
 
@@ -187,7 +187,7 @@ export function Invitation() {
         </div>
         <div className="chapter-copy">
           <p className="lead">
-            Mukesh & Company is delighted to begin its journey as the authorised
+            Indian Trading Company is delighted to begin its journey as the authorised
             distributor for SPACES across Jharkhand.
           </p>
           <p>
@@ -196,7 +196,7 @@ export function Invitation() {
           </p>
           <div className="signature">
             <span>With warm regards</span>
-            <strong>Mukesh & Company</strong>
+            <strong>Indian Trading Company</strong>
           </div>
         </div>
       </section>
@@ -224,8 +224,8 @@ export function Invitation() {
         <div className="occasion-inner">
           <p className="overline">Save the date</p>
           <div className="date-display">
-            <span>Sunday</span>
-            <strong>23</strong>
+            <span>Tuesday</span>
+            <strong>25</strong>
             <div><b>August</b><small>2026</small></div>
           </div>
           <div className="occasion-rule" aria-hidden="true"><span /></div>
@@ -298,7 +298,7 @@ export function Invitation() {
 
       <footer>
         <div className="closing-knot" aria-hidden="true"><span /></div>
-        <MukeshWordmark inverse />
+        <IndianTradingWordmark inverse />
         <SpacesMark />
         <p>Let&apos;s create a season of success together.</p>
         <a href="#top">Back to top <ArrowDown weight="bold" /></a>

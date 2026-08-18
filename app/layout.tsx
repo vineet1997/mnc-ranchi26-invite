@@ -33,28 +33,28 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "SPACES Conference - Ranchi 2026",
   description:
-    "Mukesh & Company welcomes Jharkhand's retail community to the SPACES Conference on 23 August 2026 at Chanakya BNR Ranchi.",
+    "Indian Trading Company welcomes Jharkhand's retail community to the SPACES Conference on 25 August 2026 at Lemon Tree Hotel, Ranchi.",
   applicationName: "SPACES Conference",
   category: "event",
   openGraph: {
     title: "A new chapter unfolds in Jharkhand",
-    description: "SPACES Conference - 23 August 2026 - Chanakya BNR Ranchi",
+    description: "SPACES Conference - 25 August 2026 - Lemon Tree Hotel, Ranchi",
     type: "website",
     locale: "en_IN",
     images: [
       {
-        url: "/spaces-ranchi-preview-v3.jpg",
+        url: "/spaces-ranchi-preview-v4.jpg",
         width: 1200,
         height: 630,
-        alt: "Mukesh & Company invites Jharkhand retailers to the SPACES Conference in Ranchi",
+        alt: "Indian Trading Company invites Jharkhand retailers to the SPACES Conference in Ranchi",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "A new chapter unfolds in Jharkhand",
-    description: "SPACES Conference - 23 August 2026 - Chanakya BNR Ranchi",
-    images: ["/spaces-ranchi-preview-v3.jpg"],
+    description: "SPACES Conference - 25 August 2026 - Lemon Tree Hotel, Ranchi",
+    images: ["/spaces-ranchi-preview-v4.jpg"],
   },
 };
 

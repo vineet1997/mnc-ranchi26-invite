@@ -1,21 +1,23 @@
 export const event = {
   title: "SPACES Conference",
   eyebrow: "A new chapter unfolds in Jharkhand",
-  dateLabel: "23 August 2026",
-  shortDate: "23 Aug",
-  weekday: "Sunday",
-  timeLabel: "3:00 PM onwards",
-  venue: "Chanakya BNR Ranchi",
-  address: "Station Road, Ranchi, Jharkhand 834001",
-  rsvpDeadline: "18 August 2026",
+  dateLabel: "25 August 2026",
+  shortDate: "25 Aug",
+  weekday: "Tuesday",
+  timeLabel: "6:00 PM onwards",
+  venue: "Lemon Tree Hotel, Ranchi",
+  venueLabel: "Lemon Tree Hotel",
+  venueDetail: "Conference Hall, 7th Floor",
+  address: "Conference Hall, 7th Floor, Savy Raj Mall, 57A, Main Road, Hindpiri, Ranchi, Jharkhand 834001",
+  rsvpDeadline: "at your earliest convenience",
   rsvpNumber: "919431022128",
   displayRsvpNumber: "+91 94310 22128",
   hostName: "Mukesh Agarwal",
   coHostName: "Sanchit Agarwal",
   directionsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Chanakya+BNR+Ranchi+Station+Road+Ranchi+Jharkhand+834001",
-  calendarStart: "20260823T093000Z",
-  calendarEnd: "20260823T133000Z",
+    "https://www.google.com/maps/search/?api=1&query=Lemon+Tree+Hotel+Ranchi+Savy+Raj+Mall+57A+Main+Road+Hindpiri+Ranchi+Jharkhand+834001",
+  calendarStart: "20260825T123000Z",
+  calendarEnd: "20260825T170000Z",
 } as const;
 
 export const promises = [

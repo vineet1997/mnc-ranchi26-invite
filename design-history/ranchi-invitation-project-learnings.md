@@ -1,16 +1,16 @@
 # Ranchi Invitation — Project Choices and Learnings
 
-**Project:** Mukesh & Company × SPACES Ranchi Conference Invitation  
+**Project:** Indian Trading Company × SPACES Ranchi Conference Invitation  
 **Recorded:** 12 August 2026
 
 ## 1. The brief
 
-Mukesh & Company is the primary host of a conference marking its role as SPACES' authorised distributor for Jharkhand. The audience is the state's retail community. Most guests will encounter the invitation on a mobile phone after opening a link from WhatsApp or Facebook.
+Indian Trading Company is the primary host of a conference marking its role as SPACES' authorised distributor for Jharkhand. The audience is the state's retail community. Most guests will encounter the invitation on a mobile phone after opening a link from WhatsApp or Facebook.
 
 The page therefore had to achieve four things in sequence:
 
 1. Feel like a personal, premium invitation.
-2. Make Mukesh & Company visibly authoritative as the host.
+2. Make Indian Trading Company visibly authoritative as the host.
 3. Explain why the event matters to a retailer.
 4. Make confirmation, directions, and event retrieval effortless.
 
@@ -18,12 +18,12 @@ The core event details taken from the supplied poster are:
 
 - SPACES Conference
 - “Discover. Connect. Grow Together.”
-- 23 August 2026
-- 3:00 PM onwards
-- Chanakya BNR, Ranchi
+- 25 August 2026
+- 6:00 PM onwards
+- Lemon Tree Hotel, Ranchi - Conference Hall, 7th Floor
 - Exclusive preview, new collection launch, networking and growth, and event offers
 
-Operational details such as the final WhatsApp number, exact host names, RSVP deadline, agenda, refreshments, and final venue pin remain editable pending confirmation.
+Operational details such as the final WhatsApp number, exact host names, RSVP deadline, agenda, and refreshments remain editable pending confirmation.
 
 ## 2. Creative direction
 
@@ -41,12 +41,12 @@ The experience has two complementary acts:
 
 ## 3. Brand hierarchy
 
-Mukesh & Company is the primary host. SPACES is the featured brand partner.
+Indian Trading Company is the primary host. SPACES is the featured brand partner.
 
 Important decisions:
 
-- Mukesh & Company appears first and at least matches or exceeds SPACES in visual prominence.
-- The custom Mukesh & Company wordmark stands on its own without an extra monogram.
+- Indian Trading Company appears first and at least matches or exceeds SPACES in visual prominence.
+- The custom Indian Trading Company wordmark stands on its own without an extra monogram.
 - “Authorised distributor for Jharkhand” belongs in the explanatory story, not crowded into the opening header.
 - The SPACES identity is kept authentic and its multicolour mark is not recoloured or imitated throughout the page.
 - Guests are described as retail partners rather than an audience to reinforce the relationship-led tone.
@@ -123,7 +123,7 @@ The loading screen exists for a practical reason: the full-resolution textile an
 
 The loading screen is quiet and branded. Once assets are decoded, the physical sequence begins. Content enters in a coordinated order after the cloth has materially slowed:
 
-1. Mukesh & Company and SPACES lockup
+1. Indian Trading Company and SPACES lockup
 2. “A new chapter unfolds.”
 3. Conference identity and event details
 4. Attendance and direction actions
@@ -186,13 +186,13 @@ The most important tuning parameters are grouped in one `FEEL` configuration. Fu
 7. **Overscan physical surfaces.** Deforming edges should not accidentally expose the implementation.
 8. **Settle by measurement, not hope.** Velocity thresholds and a safety timeout are clearer than guessing a fixed duration.
 9. **Progressive enhancement protects ambition.** A high-impact experience can still have a complete low-power fallback.
-10. **Host hierarchy must survive aesthetics.** The page exists to strengthen Mukesh & Company's relationship with retailers, not merely showcase SPACES.
+10. **Host hierarchy must survive aesthetics.** The page exists to strengthen Indian Trading Company's relationship with retailers, not merely showcase SPACES.
 
 ## 12. Next decisions
 
 - Confirm the official RSVP WhatsApp and call numbers.
 - Confirm host names, roles, RSVP deadline, and guest policy.
-- Confirm exact venue listing, address, entrance, parking, and map pin.
+- Confirm entrance and parking guidance if it should be added to the website.
 - Add the agenda and refreshment details once final.
 - Add authentic SPACES collection imagery only if suitable approved images become available.
 - Verify final brand wording and supplied assets before public launch.

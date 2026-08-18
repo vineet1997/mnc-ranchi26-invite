@@ -4,14 +4,14 @@ export function GET() {
   const body = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Mukesh & Company//SPACES Conference//EN",
+    "PRODID:-//Indian Trading Company//SPACES Conference//EN",
     "CALSCALE:GREGORIAN",
     "BEGIN:VEVENT",
     `DTSTART:${event.calendarStart}`,
     `DTEND:${event.calendarEnd}`,
     "SUMMARY:SPACES Conference · Ranchi",
     `LOCATION:${event.venue}\, ${event.address}`,
-    "DESCRIPTION:Mukesh & Company welcomes Jharkhand's retail community to the SPACES Conference. Discover. Connect. Grow together.",
+    "DESCRIPTION:Indian Trading Company welcomes Jharkhand's retail community to the SPACES Conference. Discover. Connect. Grow together.",
     "END:VEVENT",
     "END:VCALENDAR",
   ].join("\r\n");

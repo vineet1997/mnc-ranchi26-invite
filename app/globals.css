@@ -149,8 +149,8 @@ a {
   z-index: 1;
 }
 
-.opening-loader-mark .mukesh-mark strong {
-  font-size: clamp(2.15rem, 7vw, 4.2rem);
+.opening-loader-mark .indian-trading-mark strong {
+  font-size: clamp(1.55rem, 7vw, 3.75rem);
   font-weight: 500;
 }
 
@@ -234,14 +234,14 @@ a {
   background: linear-gradient(90deg, var(--brass), transparent);
 }
 
-.mukesh-mark {
+.indian-trading-mark {
   position: relative;
   display: block;
   align-items: center;
   width: max-content;
 }
 
-.mukesh-mark strong {
+.indian-trading-mark strong {
   font-family: var(--font-display), Georgia, serif;
   font-size: clamp(1.7rem, 3.2vw, 2.25rem);
   font-weight: 600;
@@ -249,7 +249,7 @@ a {
   letter-spacing: .015em;
 }
 
-.mukesh-mark i {
+.indian-trading-mark i {
   color: var(--brass);
   font-weight: 400;
 }
@@ -920,11 +920,11 @@ footer .spaces-mark span {
   width: clamp(1.6rem, 4vw, 2.2rem);
 }
 
-footer .mukesh-mark strong {
-  font-size: clamp(1.85rem, 4.8vw, 2.75rem);
+footer .indian-trading-mark strong {
+  font-size: clamp(1.45rem, 6.8vw, 2.75rem);
 }
 
-.mukesh-mark.inverse i {
+.indian-trading-mark.inverse i {
   color: var(--brass-light);
 }
 
@@ -1030,12 +1030,12 @@ footer > a svg {
     display: none;
   }
 
-  .mukesh-mark {
+  .indian-trading-mark {
     display: block;
   }
 
-  .mukesh-mark strong {
-    font-size: clamp(1.3rem, 5.6vw, 1.6rem);
+  .indian-trading-mark strong {
+    font-size: clamp(.92rem, 4.75vw, 1.35rem);
   }
 
   .hero-nav .spaces-mark span {
