@@ -10,7 +10,7 @@ import {
   MapPin,
   WhatsappLogo,
 } from "@phosphor-icons/react";
-import { event, promises } from "@/lib/event";
+import { event, eveningMoments } from "@/lib/event";
 
 const FabricScene = dynamic(
   () => import("./fabric-scene").then((module) => module.FabricScene),
@@ -201,20 +201,22 @@ export function Invitation() {
         </div>
       </section>
 
-      <section className="promises section-pad reveal-section">
-        <header className="section-heading centered">
-          <p className="overline">What awaits you</p>
-          <h2>A first look at<br /><em>what comes next.</em></h2>
+      <section className="evening section-pad reveal-section" aria-labelledby="evening-title">
+        <header className="evening-intro">
+          <p className="overline">An evening unfolds</p>
+          <h2 id="evening-title">A new season, <em>shared in good company.</em></h2>
+          <p>Thoughtfully woven around what matters for the season ahead.</p>
         </header>
-        <div className="promise-grid">
-          {promises.map((promise) => (
-            <article className="promise-card" key={promise.numeral}>
-              <span className="promise-index">{promise.numeral}</span>
+        <div className="evening-sequence">
+          <span className="evening-thread" aria-hidden="true"><span /></span>
+          {eveningMoments.map((moment) => (
+            <article className={`evening-moment evening-moment-${moment.tone}`} key={moment.numeral}>
+              <span className="evening-numeral">{moment.numeral}</span>
               <div>
-                <h3>{promise.title}</h3>
-                <p>{promise.copy}</p>
+                <h3>{moment.kicker}</h3>
+                <p className="evening-title">{moment.title}</p>
               </div>
-              <span className="selvedge" aria-hidden="true" />
+              <p className="evening-copy">{moment.copy}</p>
             </article>
           ))}
         </div>
@@ -258,7 +260,7 @@ export function Invitation() {
           <p className="overline">Your invitation</p>
           <h2>We look forward<br />to welcoming you.</h2>
           <p>
-            Kindly confirm by {event.rsvpDeadline}. Your message will open in
+            Kindly confirm at {event.rsvpDeadline}. Your message will open in
             WhatsApp for you to review before sending.
           </p>
           <div className="contact-line">

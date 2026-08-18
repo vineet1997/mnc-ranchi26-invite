@@ -20,25 +20,40 @@ export const event = {
   calendarEnd: "20260825T170000Z",
 } as const;
 
-export const promises = [
+export const eveningMoments = [
   {
     numeral: "01",
-    title: "Exclusive preview",
-    copy: "Be among the first to discover what SPACES is bringing to Jharkhand.",
+    kicker: "A first look",
+    title: "The new collection.",
+    copy: "Be among the first to experience the latest SPACES stories in bed, bath and home.",
+    tone: "daylight",
   },
   {
     numeral: "02",
-    title: "New collection launch",
-    copy: "A considered first look at the latest stories in bed, bath and home.",
+    kicker: "The season ahead",
+    title: "Ideas with opportunity.",
+    copy: "Explore considered launches, offers and possibilities for the season to come.",
+    tone: "daylight",
   },
   {
     numeral: "03",
-    title: "Connect & grow",
-    copy: "Meet the team, exchange ideas and shape a stronger season together.",
+    kicker: "Conversations that grow",
+    title: "A stronger season, together.",
+    copy: "Meet the team, exchange ideas and connect with fellow retail partners.",
+    tone: "daylight",
   },
   {
     numeral: "04",
-    title: "Event offers",
-    copy: "Discover opportunities curated especially for our retail partners.",
+    kicker: "Cocktails",
+    title: "Raise a glass to the new chapter.",
+    copy: "An easy moment to celebrate the partnership and the people shaping it.",
+    tone: "twilight",
+  },
+  {
+    numeral: "05",
+    kicker: "Dinner",
+    title: "Continue the conversation.",
+    copy: "Gather around the table as the evening comes to a close.",
+    tone: "twilight",
   },
 ] as const;
