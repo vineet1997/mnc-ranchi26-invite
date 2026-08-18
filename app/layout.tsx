@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "/spaces-ranchi-preview-v4.jpg",
+        url: "/spaces-ranchi-preview-v4.jpg?v=20260825",
         width: 1200,
         height: 630,
         alt: "Indian Trading Company invites Jharkhand retailers to the SPACES Conference in Ranchi",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "A new chapter unfolds in Jharkhand",
     description: "SPACES Conference - 25 August 2026 - Lemon Tree Hotel, Ranchi",
-    images: ["/spaces-ranchi-preview-v4.jpg"],
+    images: ["/spaces-ranchi-preview-v4.jpg?v=20260825"],
   },
 };
 
