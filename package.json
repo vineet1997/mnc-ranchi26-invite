@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "generate:og": "node scripts/generate-og.mjs",
-    "generate:print": "node scripts/generate-print-invitation.mjs"
+    "generate:print": "node scripts/generate-print-invitation.mjs",
+    "generate:selvedge": "node scripts/generate-selvedge-invitation.mjs"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",

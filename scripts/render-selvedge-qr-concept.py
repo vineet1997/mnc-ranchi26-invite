@@ -1,20 +1,16 @@
-"""Create a visual-only QR composition study for the printed invitation.
-
-This is deliberately not a production QR. It exists to judge the artwork before
-we lock the destination and rebuild the final QR as a scan-tested vector code.
-"""
+"""Render the selvedge invitation with a scan-tested QR matrix."""
 
 from __future__ import annotations
 
 import math
-import random
+import json
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 
 ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = ROOT / "output" / "print" / "indian-trading-company-spaces-ranchi-invitation-selvedge-concept-v2.png"
 FABRIC = ROOT / "public" / "fabric-ivory-original.jpg"
 FONTS = Path("C:/Windows/Fonts")
 
@@ -62,32 +58,26 @@ def draw_finder(draw: ImageDraw.ImageDraw, x: float, y: float, module: float) ->
     draw.rounded_rectangle((x + 2 * module, y + 2 * module, x + 5 * module, y + 5 * module), radius=module * 0.30, fill=ESPRESSO)
 
 
-def draw_concept_qr(draw: ImageDraw.ImageDraw, x: int, y: int, size: int) -> None:
-    # A visually balanced faux code: it is a composition study, not a scannable QR.
-    matrix_size = 29
+def draw_qr(draw: ImageDraw.ImageDraw, matrix: list[list[bool]], x: int, y: int, size: int) -> None:
+    matrix_size = len(matrix)
     module = size / (matrix_size + 8)
     code_x = x + 4 * module
     code_y = y + 4 * module
-    randomizer = random.Random(23)
-    for row in range(matrix_size):
-        for col in range(matrix_size):
-            if in_finder(row, col, matrix_size):
+    for row, row_data in enumerate(matrix):
+        for col, active in enumerate(row_data):
+            if not active or in_finder(row, col, matrix_size):
                 continue
-            # Preserve a clean implied timing rhythm but keep it woven, not clinical.
-            active = randomizer.random() > 0.47
-            if row == 6 or col == 6:
-                active = (row + col) % 2 == 0
-            if active:
-                left = code_x + col * module
-                top = code_y + row * module
-                draw.rounded_rectangle((left, top, left + module, top + module), radius=module * 0.34, fill=ESPRESSO)
+            left = code_x + col * module
+            top = code_y + row * module
+            draw.rounded_rectangle((left, top, left + module, top + module), radius=module * 0.34, fill=ESPRESSO)
     draw_finder(draw, code_x, code_y, module)
     draw_finder(draw, code_x + (matrix_size - 7) * module, code_y, module)
     draw_finder(draw, code_x, code_y + (matrix_size - 7) * module, module)
 
 
-def main() -> None:
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+def main(config: dict) -> None:
+    output = Path(config["output"])
+    output.parent.mkdir(parents=True, exist_ok=True)
     image = fabric_background()
     overlay = Image.new("RGBA", image.size, (248, 243, 234, 0))
     overlay_draw = ImageDraw.Draw(overlay)
@@ -132,18 +122,25 @@ def main() -> None:
     draw.text((791, 895), "Lemon Tree Hotel", fill=ESPRESSO, font=font("GARA.TTF", 40))
     draw.text((795, 950), "CONFERENCE HALL  ·  7TH FLOOR", fill="#5B473B", font=font("georgiab.ttf", 15))
 
-    # The code has no container. A soft, woven-looking light pool provides a
-    # scan-safe field while dissolving into the surrounding cloth.
+    # The code has no hard-edged container. This feathered plain-weave pool is
+    # flat inside the QR quiet zone, then dissolves into the surrounding cloth.
     qr_x, qr_y, qr_size = 1312, 702, 360
     pool = Image.new("RGBA", image.size, (0, 0, 0, 0))
-    pool_draw = ImageDraw.Draw(pool)
-    center_x, center_y = qr_x + qr_size / 2, qr_y + qr_size / 2
-    for radius in range(260, 385, 8):
-        alpha = int(1.8 * (385 - radius))
-        pool_draw.ellipse((center_x - radius, center_y - radius, center_x + radius, center_y + radius), fill=(250, 247, 239, alpha))
+    pool_mask = Image.new("L", image.size, 0)
+    pool_mask_draw = ImageDraw.Draw(pool_mask)
+    pool_mask_draw.rounded_rectangle(
+        (qr_x - 28, qr_y - 28, qr_x + qr_size + 28, qr_y + qr_size + 28),
+        radius=28,
+        fill=238,
+    )
+    pool_mask = pool_mask.filter(ImageFilter.GaussianBlur(radius=24))
+    pool_color = Image.new("RGBA", image.size, (251, 247, 239, 0))
+    pool_color.putalpha(pool_mask)
+    pool = Image.alpha_composite(pool, pool_color)
     image = Image.alpha_composite(image, pool)
     draw = ImageDraw.Draw(image)
-    draw_concept_qr(draw, qr_x, qr_y, qr_size)
+    draw_qr(draw, config["matrix"], qr_x, qr_y, qr_size)
+    center_x, center_y = qr_x + qr_size / 2, qr_y + qr_size / 2
 
     # An understated selvedge is a continuation of the fabric edge, not a badge.
     baseline = 1090
@@ -161,9 +158,10 @@ def main() -> None:
         draw.line((x + dx * 10, y, x + dx * 35, y), fill=crop_color, width=1)
         draw.line((x, y + dy * 10, x, y + dy * 35), fill=crop_color, width=1)
 
-    image.convert("RGB").save(OUTPUT, quality=94, subsampling=0)
-    print(OUTPUT)
+    image.convert("RGB").save(output, quality=94, subsampling=0)
+    print(output)
 
 
 if __name__ == "__main__":
-    main()
+    with Path(sys.argv[1]).open("r", encoding="utf-8") as handle:
+        main(json.load(handle))
