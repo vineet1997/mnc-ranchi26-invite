@@ -9,7 +9,7 @@ export const event = {
   venueLabel: "Lemon Tree Hotel",
   venueDetail: "Conference Hall, 7th Floor",
   address: "Conference Hall, 7th Floor, Savy Raj Mall, 57A, Main Road, Hindpiri, Ranchi, Jharkhand 834001",
-  rsvpDeadline: "at your earliest convenience",
+  rsvpDeadline: "your earliest convenience",
   rsvpNumber: "919431022128",
   displayRsvpNumber: "+91 94310 22128",
   hostName: "Mukesh Agarwal",
